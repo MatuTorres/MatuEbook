@@ -8,10 +8,10 @@
 #### [ ] Posibilidad de formatear la tarjeta de memoria
 
 ### COMPONENTES
-Arduino UNO / NANO (todavía lo estoy decidiendo)
-Lector de microSD
-Dos pulsadores
-Display
+#### Arduino UNO / NANO (todavía lo estoy decidiendo)
+#### Lector de microSD
+#### Dos pulsadores
+#### Display
 
 ### ACLARACIONES
-Para este proyecto se está utilizando la librería _<SD.h>_ para Arduino para poder controlar el lector de microSD donde se guardan todos los libros
+#### Para este proyecto se está utilizando la librería _<SD.h>_ para Arduino para poder controlar el lector de microSD donde se guardan todos los libros
