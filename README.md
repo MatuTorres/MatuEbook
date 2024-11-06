@@ -6,6 +6,7 @@
 #### [ ] Registro de la última página leída
 #### [ ] Configuración de tamaño de letra
 #### [ ] Posibilidad de formatear la tarjeta de memoria
+#### [ ] Dos idiomas
 
 ### COMPONENTES
 #### Arduino UNO / NANO (todavía lo estoy decidiendo)
