@@ -2,7 +2,7 @@
 ## Proyecto Libro electrónico de Mateo Torres.
 
 ### COSAS QUE **_TIENE_** QUE TENER EL LIBRO
-#### [ ] Menú de selección de libros
+#### [x] Menú de selección de libros
 #### [ ] Registro de la última página leída
 #### [ ] Configuración de tamaño de letra
 #### [ ] Posibilidad de formatear la tarjeta de memoria
