@@ -33,45 +33,31 @@ void printDirectory(File dir, int numTabs)
 
 void bookSelection(File dir, int numTabs)
 {
-  int markAnt = 0;
+  static int markAnt = -1;
 
-  if(digitalRead(right) == LOW) // Si se apretó el botón de la derecha
+  bool rightPressed = (digitalRead(right) == LOW);
+  bool leftPressed = (digitalRead(left) == LOW);
+
+  if (rightPressed)
   {
-    if(mark == bookCount)
-    {
-      mark = bookCount;
-    }
-    else
-    {
-      mark++;
-    }
-  }
-  else if(digitalRead(left) == LOW) // Si se apretó el botón de la izquierda
-  {
-    if(mark == 1)
-    {
-      mark = 1;
-    }
-    else
-    {
-      mark--;
-    }
+    mark = (mark < bookCount) ? mark + 1 : bookCount; // Evita que mark sobrepase bookCount
+  } else if (leftPressed) {
+    mark = (mark > 1) ? mark - 1 : 1; // Evita que mark baje de 1
   }
 
-  if(mark == markAnt){}
-  else
+  if (mark != markAnt)
   {
-
     bookCount = 0;
+    Serial.println("︵‿︵‿୨♡୧‿︵‿︵LIBROS︵‿︵‿୨♡୧‿︵‿︵");
 
-    Serial.println("LIBROS");
+    dir.rewindDirectory(); // Asegura que el directorio se lea desde el principio.
 
     while (true)
     {
-      File files =  dir.openNextFile();
-      if (! files)
+      File files = dir.openNextFile();
+      if (!files)
       {
-        break;
+        break; // No hay más archivos
       }
 
       bookCount++;
@@ -80,20 +66,18 @@ void bookSelection(File dir, int numTabs)
       {
         Serial.print('\t');
       }
-      if(bookCount == mark)
+
+      if (bookCount == mark)
       {
         Serial.print(files.name());
         Serial.print(" ←");
-      }
-      else
-      {
+      } else {
         Serial.print(files.name());
       }
 
       Serial.print("\n");
-
       files.close();
     }
+    markAnt = mark;
   }
-  markAnt = mark;
 }

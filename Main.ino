@@ -7,7 +7,7 @@
 File testFile;
 File root;
 int bookCount = 0;
-File books[100];
+File books[10];
 
 void setup()
 {
@@ -34,5 +34,5 @@ void setup()
 
 void loop() 
 {
-  // aca no va nada por ahora
+  bookSelection(root, 0);
 }
